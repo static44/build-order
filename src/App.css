@@ -55,15 +55,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: end;
   min-height: var(--minblock);
   min-width: var(--minblock);
   height: auto;
-
-
-
 }
 .Card {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  min-height: var(--minblock);
+  min-width: var(--minblock);
+  max-height: var(--maxblock);
+  max-width: var(--maxblock);
+}
+.Card_Blanks {
+  display: flex;
   position: relative;
   height: auto;
   width: 100%;
@@ -71,8 +77,20 @@
   min-width: var(--minblock);
   max-height: var(--maxblock);
   max-width: var(--maxblock);
+  background-color: green;
+  margin: 3px;
 
+}
 
+.Card_Spacers {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: auto;
+  width: 100%;
+  min-height: var(--minblock);
+  min-width: var(--minblock);
+  justify-content: space-between;
 }
 
 .CardImage {

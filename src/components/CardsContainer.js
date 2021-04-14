@@ -1,34 +1,12 @@
-import {React, useState} from 'react';
+import {React, useRef, useState} from 'react';
 import {useSpring, Spring, useTrail, Transition, animated} from "react-spring"
 import WorkerImage from "./WorkerImage";
 import TimeDisplay from "./TimeDisplay";
-import UnitCountDisplay from "./UnitCountDisplay";
+import UnitCountDisplay from "./UnitCountDisplay"
+import Card from "./Card"
 import TestBuild from "../Build1.json";
 import $ from 'jquery'
 import {useStopwatch} from "react-timer-hook";
-
-const Card = (props) => {
-    const {UnitName, Race, Time, UnitCount, WorkerCount, CardID} = props;
-
-    return (
-        <Spring
-            from={{opacity:0, marginTop: -500}}
-            to={{opacity:1, marginTop: 0}}
-        >
-            {props => (
-                    <div style={props} className="Card" id={"Card_" + CardID}>
-                        <img className="CardImage" src={require(`../images/${UnitName}.jpg`).default}/>
-                        <div className={"twoflex"}>
-                            <WorkerImage WorkerCount={WorkerCount}/>
-                            <TimeDisplay Time={Time}/>
-                        </div>
-                        <UnitCountDisplay
-                            Unit={UnitName}
-                            Count={UnitCount}/>
-                    </div>)}
-        </Spring>
-    );
-};
 
 
 const CardsContainer = () => {
@@ -42,6 +20,15 @@ const CardsContainer = () => {
     const Spring = useSpring({opacity: 1, from: {opacity: 0}})
     const [animate, setAnimate] = useState(false);
     const handleClick = () => setAnimate(!animate);
+
+    const transitionRef = useRef()
+    const props = useSpring({
+        to: async (next, cancel) => {
+            await next({opacity: 1, color: '#ffaaee'})
+            await next({opacity: 0, color: 'rgb(14,26,19)'})
+        },
+        from: {opacity: 0, color: 'green'},
+    })
 
     for (let buildKey in TestBuild) {
         Build.push(
@@ -65,7 +52,7 @@ const CardsContainer = () => {
 
     return (
         <div id="CardsContainer">
-            {Display.map((card, index) => {
+            {Build.map((card, index) => {
                 return <Card
                     UnitName={card.UnitName}
                     Race={card.Race}
