@@ -56,7 +56,6 @@ const CardsContainer = () => {
         if (Display.length < 3) {
             Display.push(buildElement)
         } else if (true) {
-
         }
     }
 
