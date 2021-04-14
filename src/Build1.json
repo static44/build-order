@@ -1,0 +1,62 @@
+[
+  {
+    "WorkerCount": "14",
+    "Time": "0:17",
+    "UnitCount": "3",
+    "UnitName": "Pylon"
+  },
+  {
+    "WorkerCount": "15",
+    "Time": "0:35",
+    "UnitCount": "3",
+    "UnitName": "Gateway"
+  },
+  {
+    "WorkerCount": "18",
+    "Time": "1:07",
+    "UnitCount": "1",
+    "UnitName": "Nexus"
+  },
+  {
+    "WorkerCount": "17",
+    "Time": "1:12",
+    "UnitCount": "2",
+    "UnitName": "Assimilator"
+  },
+  {
+    "WorkerCount": "18",
+    "Time": "1:24",
+    "UnitCount": "1",
+    "UnitName": "Cybernetics_Core"
+  },
+  {
+    "WorkerCount": "19",
+    "Time": "1:34",
+    "UnitCount": "6",
+    "UnitName": "Pylon"
+  },
+  {
+    "WorkerCount": "20",
+    "Time": "1:51",
+    "UnitCount": "1",
+    "UnitName": "Gateway"
+  },
+  {
+    "WorkerCount": "20",
+    "Time": "1:52",
+    "UnitCount": "1",
+    "UnitName": "Gateway"
+  },
+  {
+    "WorkerCount": "21",
+    "Time": "2:00",
+    "UnitCount": "1",
+    "UnitName": "Adept"
+  },
+  {
+    "WorkerCount": "24",
+    "Time": "2:17",
+    "UnitCount": "1",
+    "UnitName": "Gateway"
+  }
+]

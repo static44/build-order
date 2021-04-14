@@ -1,0 +1,20 @@
+[
+  {
+    "WorkerCount": "14",
+    "Time": "0:17",
+    "UnitCount": "1",
+    "UnitName": "Pylon"
+  },
+  {
+    "WorkerCount": "15",
+    "Time": "0:35",
+    "UnitCount": "1",
+    "UnitName": "Gateway"
+  },
+  {
+    "WorkerCount": "15",
+    "Time": "0:35",
+    "UnitCount": "1",
+    "UnitName": "Gateway"
+  }
+]

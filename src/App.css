@@ -1,0 +1,138 @@
+:root {
+  --block1: 3vh;
+  --block2: 30vh;
+  --minblock: 10vh;
+  --maxblock: 30vh;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: var(--block2);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: var(--block1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color: white;
+  margin-bottom: var(--block1);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.twoflex {
+  display: flex;
+  flex: 1 0 50%;
+  justify-content: center;
+}
+
+#CardsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: end;
+  min-height: var(--minblock);
+  min-width: var(--minblock);
+  height: auto;
+
+
+
+}
+.Card {
+  position: relative;
+  height: auto;
+  width: 100%;
+  min-height: var(--minblock);
+  min-width: var(--minblock);
+  max-height: var(--maxblock);
+  max-width: var(--maxblock);
+
+
+}
+
+.CardImage {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+
+#WorkerImage {
+  display: flex;
+  flex-grow: 1;
+  flex: 1 0 50%;
+  position: relative;
+  width: 10%;
+  height: auto;
+  padding: 1vh;
+  justify-content: center;
+}
+
+.WorkerWords {
+  color: white;
+}
+
+
+.Time-Display {
+  display: flex;
+  position: relative;
+  flex: 1 0 50%;
+  color: white;
+  padding: 1vh;
+  justify-content: center;
+}
+#Timer {
+  display: flex;
+  bottom: 50%;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  margin-bottom: var(--block1);
+}
+
+#UnitCountDisplay {
+  position: relative;
+  flex: 1 0 50%;
+  font-size: calc(8px + 2vmin);
+  text-align: center;
+  color: white;
+}
+
+.WorkOrder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  min-height: var(--minblock);
+  min-width: var(--minblock);
+  align-items: center;
+
+}
