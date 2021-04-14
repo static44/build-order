@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {useSpring, useTrail, animated} from "react-spring"
+import {useSpring, Spring, useTrail, Transition, animated} from "react-spring"
 import WorkerImage from "./WorkerImage";
 import TimeDisplay from "./TimeDisplay";
 import UnitCountDisplay from "./UnitCountDisplay";
@@ -11,18 +11,22 @@ const Card = (props) => {
     const {UnitName, Race, Time, UnitCount, WorkerCount, CardID} = props;
 
     return (
-        <div className="WorkOrder">
-            <div className="Card" id={"Card_" + CardID}>
-                <img className="CardImage" src={require(`../images/${UnitName}.jpg`).default}/>
-                <div className={"twoflex"}>
-                    <WorkerImage WorkerCount={WorkerCount}/>
-                    <TimeDisplay Time={Time}/>
-                </div>
-                <UnitCountDisplay
-                    Unit={UnitName}
-                    Count={UnitCount}/>
-            </div>
-        </div>
+        <Spring
+            from={{opacity:0, marginTop: -500}}
+            to={{opacity:1, marginTop: 0}}
+        >
+            {props => (
+                    <div style={props} className="Card" id={"Card_" + CardID}>
+                        <img className="CardImage" src={require(`../images/${UnitName}.jpg`).default}/>
+                        <div className={"twoflex"}>
+                            <WorkerImage WorkerCount={WorkerCount}/>
+                            <TimeDisplay Time={Time}/>
+                        </div>
+                        <UnitCountDisplay
+                            Unit={UnitName}
+                            Count={UnitCount}/>
+                    </div>)}
+        </Spring>
     );
 };
 

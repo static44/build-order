@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import './App.css';
 import reportWebVitals from './reportWebVitals';
 import CardsContainer from "./components/CardsContainer";
 import Timer from "./components/Timer";
 import Header from "./components/Header";
 import $ from "jquery";
+import App from './App';
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header/>
-        <Timer/>
-        <CardsContainer/>
-        <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <App />
     </React.StrictMode>,
     document.getElementById('root')
 );

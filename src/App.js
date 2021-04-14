@@ -1,11 +1,16 @@
 import './App.css';
 import marine from './images/Marine.jpg';
+import Header from "./components/Header";
+import Timer from "./components/Timer";
+import CardsContainer from "./components/CardsContainer";
+import React from "react";
 
 function App() {
-    let imageName = marine;
   return (
     <div className="App">
-      <h1>Build Order</h1>
+        <Header/>
+        <Timer/>
+        <CardsContainer/>
     </div>
   );
 }
