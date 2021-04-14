@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Build Order",
+  "name": "Starcraft 2 Build Order Trainer",
   "icons": [
     {
       "src": "favicon.ico",
