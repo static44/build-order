@@ -60,7 +60,7 @@
   height: auto;
 }
 .Card {
-  position: absolute;
+  position: relative;
   height: auto;
   width: 100%;
   min-height: var(--minblock);
