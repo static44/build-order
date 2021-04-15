@@ -8,7 +8,7 @@ const Card = (props) => {
     const {UnitName, Race, Time, UnitCount, WorkerCount, CardID, Animation_Props} = props;
 
     return (
-        <animated.div className="Card" id={"Card_" + CardID}>
+        <animated.div style={Animation_Props} className="Card" id={"Card_" + CardID}>
             <img className="CardImage" src={require(`../images/${UnitName}.jpg`).default}/>
             <div className={"twoflex"}>
                 <WorkerImage WorkerCount={WorkerCount}/>
