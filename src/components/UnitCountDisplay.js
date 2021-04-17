@@ -3,13 +3,21 @@ import React from 'react';
 const UnitCountDisplay = (props) => {
 
     const { Unit, Count} = props;
+    const UnitName = Unit.toString().replace('_', ' ') + ((Count > 1) ? "s" : "");
+    let BuildOrder;
 
-    const UnitName = Unit + ((Count > 1) ? "s" : "");
+    if (Unit === "Start") {
+        BuildOrder = ""
+    } else if (Unit === "End") {
+        BuildOrder = ""
+    } else {
+        BuildOrder = ("Build " + Count + " " + UnitName)
+    }
 
     return (
         <div id="UnitCountDisplay">
             <h3>
-                Build {Count} {UnitName}
+                {BuildOrder}
             </h3>
         </div>
     );

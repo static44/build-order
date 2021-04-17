@@ -8,22 +8,30 @@ import Card from "./components/Card";
 import Card_Spacers from "./components/Card_Spacers";
 import TestBuild from "./Build1.json";
 
+
 function App() {
 
     const Build = [];
-    const [display, setDisplay] = useState([]);
-    const [count, setCount] = useState(0);
+
+    const [count, setCount] = useState(3);
     const displayAdd = (todo) => {
-        const newDisplay = [...display];
+        // setDisplay([...display, todo]);
+        const newDisplay = display.slice(1);
         newDisplay.push(todo);
         setDisplay(newDisplay);
-        //Alternative is
+        // Alternative is
         //setDisplay([...newDisplay, display]);
     }
+    // const displayRemove = (todo) => {
+    //     const newDisplay = display.filter((t) => t !== todo);
+    //     setDisplay(newDisplay);
+    // }
+
     const displayRemove = () => {
-        const newDisplay = [...display];
-        newDisplay.shift();
+        const newDisplay = display.slice(1);
         setDisplay(newDisplay);
+        console.log(newDisplay);
+        console.log("displayRemove")
     }
 
 
@@ -35,26 +43,45 @@ function App() {
                 Time: TestBuild[buildKey].Time,
                 UnitCount: TestBuild[buildKey].UnitCount,
                 WorkerCount: TestBuild[buildKey].WorkerCount,
-                CardID: buildKey
+                CardID: buildKey + 1
             }
         )
     }
+    //Adds Begin and End Cards
+    Build.unshift({
+        UnitName: "Start",
+        Time: "0:00",
+        CardID: 0
+
+    });
+    //Adds Begin and End Cards
+    Build.push({
+        UnitName: "End",
+        Time: Build[Build.length - 1].Time,
+        CardID: (Build[Build.length - 1].CardID + 1)
+
+    });
+
+    const [display, setDisplay] = useState(Build.slice(0,3));
 
     //Initial Population of Display
-    for (let buildElement of Build) {
-        if (count < 3) {
-            displayAdd(buildElement);
-            setCount(count + 1);
-            console.log(buildElement);
-        }
-    }
+    console.log(display);
+
 
     function AddToDisplay(e) {
 
-        displayRemove();
-        if (Build[count] != undefined)
-        {
-            displayAdd(Build[count]);
+        if (Build[count] != undefined) {
+
+            if (count < 3) {
+                console.log("Count Less than 3")
+                setCount(count + 1);
+
+            } else {
+                console.log("Count more than 3")
+                console.log(count);
+                displayRemove();
+            }
+            displayAdd(Build[count])
         }
         setCount(count + 1);
         console.log(count);
@@ -62,18 +89,15 @@ function App() {
     }
 
 
-
-  return (
-    <div className="App">
-        <Header/>
-        <Timer/>
-        {/*<TestComponent1/>*/}
-        <Card_Spacers/>
-        <CardsContainer Display={display}/>
-        <p></p>
-        <button onClick={AddToDisplay}>Test</button>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header/>
+            <button onClick={AddToDisplay}>Test</button>
+            <Timer/>
+            {/*<TestComponent1/>*/}
+            <CardsContainer Display={display}/>
+        </div>
+    );
 }
 
 export default App;
