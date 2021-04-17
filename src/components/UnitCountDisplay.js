@@ -6,9 +6,7 @@ const UnitCountDisplay = (props) => {
     const UnitName = Unit.toString().replace('_', ' ') + ((Count > 1) ? "s" : "");
     let BuildOrder;
 
-    if (Unit === "Start") {
-        BuildOrder = ""
-    } else if (Unit === "End") {
+    if (Unit === "Start" || Unit === "End" || Unit === "Blank") {
         BuildOrder = ""
     } else {
         BuildOrder = ("Build " + Count + " " + UnitName)

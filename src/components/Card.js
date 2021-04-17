@@ -1,8 +1,7 @@
 import WorkerImage from "./WorkerImage";
 import TimeDisplay from "./TimeDisplay";
 import UnitCountDisplay from "./UnitCountDisplay";
-import {useSpring, Spring, useTrail, Transition, animated} from "react-spring"
-import {React} from "react";
+import {animated} from "react-spring"
 
 const Card = (props) => {
     const {UnitName, Race, Time, UnitCount, WorkerCount, CardID, Animation_Props} = props;

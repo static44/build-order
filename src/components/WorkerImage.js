@@ -1,10 +1,9 @@
 import gather from "../images/Gather.jpg";
-import TimeDisplay from "./TimeDisplay";
 
 const WorkerImage = (props) => {
     let workerImage = gather;
 
-    const {WorkerCount, Time} = props;
+    const {WorkerCount} = props;
 
     return (
         <div id="WorkerImage">

@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './App.css';
 import reportWebVitals from './reportWebVitals';
-import CardsContainer from "./components/CardsContainer";
-import Timer from "./components/Timer";
-import Header from "./components/Header";
-import $ from "jquery";
 import App from './App';
 
 
